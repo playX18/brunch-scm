@@ -6,7 +6,7 @@ Simple benchmarking library based on Rust's [`brunch`](https://github.com/Blobfo
 ```scm
 (import (brunch))
 
-(benches (my-benchmes "out.csv")
+(benches (my-benches "out.csv")
     (bench "foo" 
         (begin 
             (let loop ([i 0])
