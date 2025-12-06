@@ -15,3 +15,5 @@ Simple benchmarking library based on Rust's [`brunch`](https://github.com/Blobfo
 ```
 
 Or also take a look at `simple.scm` in `examples/` folder.
+
+Example output: ![image.png](assets/image.png)
