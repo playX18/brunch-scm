@@ -33,12 +33,12 @@
     (let ((factor (expt 10 n)))
       (/ (round (* x factor)) factor)))
   (define (stats-nice-mean stats)
-    (let-values ([(mean unit)
+    (let-values (((mean unit)
       (cond 
-        [(< (stats-mean stats) 0.000001) (values (* (stats-mean stats) 1000000000.0) "ns")]
-        [(< (stats-mean stats) 0.001) (values (* (stats-mean stats) 1000000.0) "µs")]
-        [(< (stats-mean stats) 1.0) (values (* (stats-mean stats) 1000.0) "ms")]
-        [else (values (stats-mean stats) "s")])])
+        ((< (stats-mean stats) 0.000001) (values (* (stats-mean stats) 1000000000.0) "ns"))
+        ((< (stats-mean stats) 0.001) (values (* (stats-mean stats) 1000000.0) "µs"))
+        ((< (stats-mean stats) 1.0) (values (* (stats-mean stats) 1000.0) "ms"))
+        (else (values (stats-mean stats) "s")))))
       (define port (open-output-string))
       (write-string "\x1b;[01;m" port)
       (write-string (number->string (round-n mean 2)) port)
